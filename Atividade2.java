@@ -16,14 +16,14 @@ public class Atividade2 {
     public static int fibonacci(int valor) {
  
         if(valor == 1) {
+
             return 0;
         } else if(valor == 2) {
             
             return 1;
         } else {
+            
             return fibonacci(valor - 1) + fibonacci(valor - 2);
         }
     }
 }
-
-// 5 7 11 19 
