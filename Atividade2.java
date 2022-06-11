@@ -25,5 +25,3 @@ public class Atividade2 {
         }
     }
 }
-
-// 5 7 11 19 
