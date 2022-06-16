@@ -26,4 +26,8 @@ public class Atividade2 {
             return fibonacci(valor - 1) + fibonacci(valor - 2);
         }
     }
+<<<<<<< HEAD:AtividadeAula-1/Atividade2.java
 }
+=======
+}
+>>>>>>> 2219f21819fab6c8c18b275095a76fa404f7d775:Atividade2.java
