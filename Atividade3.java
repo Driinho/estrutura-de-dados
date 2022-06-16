@@ -18,7 +18,7 @@ public class Atividade3 {
 
         int aux = valor;
 
-        if(valor == 0) {
+        if (valor == 0) {
             return 0;
         } else {
             aux = valor % 10;
