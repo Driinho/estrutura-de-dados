@@ -12,6 +12,7 @@ public class Atividade3 {
 
         System.out.print("Numero invertido: ");
         inverter(valor);
+        System.out.println();
     }
 
     public static int inverter(int valor) {
@@ -21,10 +22,9 @@ public class Atividade3 {
         if (valor == 0) {
             return 0;
         } else {
-            aux = valor % 10;
-            System.out.print(aux);
-            aux = valor / 10;
-            return inverter(aux);
+            System.out.print(valor % 10);
+            valor = valor / 10;
+            return inverter(valor);
         }
     }
 }
