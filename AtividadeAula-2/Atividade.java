@@ -6,6 +6,7 @@ public class Atividade {
     public static void main(String[] args) {
 
         Random sort = new Random();
+        int chave;
         long tempoInicialSequencial, tempoInicialBinario, tempoSequencial, tempoBinario;
         String tabela = "============================================";
         tabela = tabela + "\n============ Tempo de Execucoes ============";
@@ -22,12 +23,14 @@ public class Atividade {
             vetor1[i] = sort.nextInt(20);
         }
 
+        chave = sort.nextInt(20);
+
         tempoInicialSequencial = System.currentTimeMillis();
-        buscaSequencial(vetor1, 70);
+        buscaSequencial(vetor1, chave);
         tempoSequencial = System.currentTimeMillis() - tempoInicialSequencial;
 
         tempoInicialBinario = System.currentTimeMillis();
-        buscaSequencial(vetor1, 70);
+        buscaSequencial(vetor1, chave);
         tempoBinario = System.currentTimeMillis() - tempoInicialBinario;
 
         // GERANDO TABELA
@@ -50,12 +53,14 @@ public class Atividade {
             vetor2[i] = sort.nextInt(200);
         }
 
+        chave = sort.nextInt(200);
+
         tempoInicialSequencial = System.currentTimeMillis();
-        buscaSequencial(vetor2, 70);
+        buscaSequencial(vetor2, chave);
         tempoSequencial = System.currentTimeMillis() - tempoInicialSequencial;
 
         tempoInicialBinario = System.currentTimeMillis();
-        buscaSequencial(vetor2, 70);
+        buscaSequencial(vetor2, chave);
         tempoBinario = System.currentTimeMillis() - tempoInicialBinario;
 
         // GERANDO TABELA
@@ -78,12 +83,14 @@ public class Atividade {
             vetor3[i] = sort.nextInt(2000);
         }
 
+        chave = sort.nextInt(2000);
+
         tempoInicialSequencial = System.currentTimeMillis();
-        buscaSequencial(vetor3, 70);
+        buscaSequencial(vetor3, chave);
         tempoSequencial = System.currentTimeMillis() - tempoInicialSequencial;
 
         tempoInicialBinario = System.currentTimeMillis();
-        buscaSequencial(vetor3, 70);
+        buscaSequencial(vetor3, chave);
         tempoBinario = System.currentTimeMillis() - tempoInicialBinario;
 
         // GERANDO TABELA
@@ -106,12 +113,14 @@ public class Atividade {
             vetor4[i] = sort.nextInt(20000);
         }
 
+        chave = sort.nextInt(20000);
+
         tempoInicialSequencial = System.currentTimeMillis();
-        buscaSequencial(vetor4, 70);
+        buscaSequencial(vetor4, chave);
         tempoSequencial = System.currentTimeMillis() - tempoInicialSequencial;
 
         tempoInicialBinario = System.currentTimeMillis();
-        buscaSequencial(vetor4, 70);
+        buscaSequencial(vetor4, chave);
         tempoBinario = System.currentTimeMillis() - tempoInicialBinario;
 
         // GERANDO TABELA
@@ -134,12 +143,14 @@ public class Atividade {
             vetor5[i] = sort.nextInt(200000);
         }
 
+        chave = sort.nextInt(200000);
+
         tempoInicialSequencial = System.currentTimeMillis();
-        buscaSequencial(vetor5, 70);
+        buscaSequencial(vetor5, chave);
         tempoSequencial = System.currentTimeMillis() - tempoInicialSequencial;
 
         tempoInicialBinario = System.currentTimeMillis();
-        buscaSequencial(vetor5, 70);
+        buscaSequencial(vetor5, chave);
         tempoBinario = System.currentTimeMillis() - tempoInicialBinario;
 
         // GERANDO TABELA
