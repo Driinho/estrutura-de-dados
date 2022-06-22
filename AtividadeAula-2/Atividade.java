@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.Random;
-import java.util.Vector;
 
 public class Atividade {
 
@@ -52,7 +51,7 @@ public class Atividade {
         tabela = tabela + "\n============================================";
 
         limpaTerminal();
-        System.out.println(tabela);
+        System.out.println(tabela + "\n\n");
     }
 
     public static long testeTempoSeq(int[] vetor, int chave) {
