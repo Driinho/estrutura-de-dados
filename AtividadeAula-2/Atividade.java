@@ -30,7 +30,7 @@ public class Atividade {
         tempoSequencial = System.currentTimeMillis() - tempoInicialSequencial;
 
         tempoInicialBinario = System.currentTimeMillis();
-        buscaSequencial(vetor1, chave);
+        buscaBinaria(vetor1, chave);
         tempoBinario = System.currentTimeMillis() - tempoInicialBinario;
 
         // GERANDO TABELA
@@ -60,7 +60,7 @@ public class Atividade {
         tempoSequencial = System.currentTimeMillis() - tempoInicialSequencial;
 
         tempoInicialBinario = System.currentTimeMillis();
-        buscaSequencial(vetor2, chave);
+        buscaBinaria(vetor2, chave);
         tempoBinario = System.currentTimeMillis() - tempoInicialBinario;
 
         // GERANDO TABELA
@@ -90,7 +90,7 @@ public class Atividade {
         tempoSequencial = System.currentTimeMillis() - tempoInicialSequencial;
 
         tempoInicialBinario = System.currentTimeMillis();
-        buscaSequencial(vetor3, chave);
+        buscaBinaria(vetor3, chave);
         tempoBinario = System.currentTimeMillis() - tempoInicialBinario;
 
         // GERANDO TABELA
@@ -120,7 +120,7 @@ public class Atividade {
         tempoSequencial = System.currentTimeMillis() - tempoInicialSequencial;
 
         tempoInicialBinario = System.currentTimeMillis();
-        buscaSequencial(vetor4, chave);
+        buscaBinaria(vetor4, chave);
         tempoBinario = System.currentTimeMillis() - tempoInicialBinario;
 
         // GERANDO TABELA
@@ -150,7 +150,7 @@ public class Atividade {
         tempoSequencial = System.currentTimeMillis() - tempoInicialSequencial;
 
         tempoInicialBinario = System.currentTimeMillis();
-        buscaSequencial(vetor5, chave);
+        buscaBinaria(vetor5, chave);
         tempoBinario = System.currentTimeMillis() - tempoInicialBinario;
 
         // GERANDO TABELA
