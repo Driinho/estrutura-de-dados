@@ -1,175 +1,115 @@
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Vector;
 
 public class Atividade {
 
     public static void main(String[] args) {
 
         Random sort = new Random();
+        long tempoBinario, tempoSequencial;
         int chave;
-        long tempoInicialSequencial, tempoInicialBinario, tempoSequencial, tempoBinario;
         String tabela = "============================================";
         tabela = tabela + "\n============ Tempo de Execucoes ============";
         tabela = tabela + "\n============================================";
         tabela = tabela + "\n=   Vetor   =   Sequencial   =   Binario   =";
         tabela = tabela + "\n============================================";
 
-        limpaTerminal();
+        int[] vetor = new int[10];
 
-        int[] vetor1;
-        vetor1 = new int[10];
-
-        for (int i = 0; i < vetor1.length; i++) {
-            vetor1[i] = sort.nextInt(20);
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = sort.nextInt(20);
         }
-
         chave = sort.nextInt(20);
 
-        tempoInicialSequencial = System.currentTimeMillis();
-        buscaSequencial(vetor1, chave);
-        tempoSequencial = System.currentTimeMillis() - tempoInicialSequencial;
-
-        tempoInicialBinario = System.currentTimeMillis();
-        buscaBinaria(vetor1, chave);
-        tempoBinario = System.currentTimeMillis() - tempoInicialBinario;
+        tempoSequencial = testeTempoSeq(vetor, chave);
+        tempoBinario = testeTempoBin(vetor, chave);
 
         // GERANDO TABELA
         tabela = tabela + "\n=   10      ";
-        if(tempoSequencial >= 10) {
-            tabela = tabela + "=      " + tempoSequencial + "       ";
-        } else {
-            tabela = tabela + "=       " + tempoSequencial + "       ";
-        }
-        if(tempoBinario >= 10) {
-            tabela = tabela + "=      " + tempoBinario + "      =";
-        } else {
-            tabela = tabela + "=       " + tempoBinario + "      =";
-        }
+        tabela = gerarTabela(tabela, tempoBinario, tempoSequencial);
 
-        int[] vetor2;
-        vetor2 = new int[100];
+        vetor = new int[100];
 
-        for (int i = 0; i < vetor2.length; i++) {
-            vetor2[i] = sort.nextInt(200);
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = sort.nextInt(200);
         }
-
         chave = sort.nextInt(200);
 
-        tempoInicialSequencial = System.currentTimeMillis();
-        buscaSequencial(vetor2, chave);
-        tempoSequencial = System.currentTimeMillis() - tempoInicialSequencial;
-
-        tempoInicialBinario = System.currentTimeMillis();
-        buscaBinaria(vetor2, chave);
-        tempoBinario = System.currentTimeMillis() - tempoInicialBinario;
+        tempoSequencial = testeTempoSeq(vetor, chave);
+        tempoBinario = testeTempoBin(vetor, chave);
 
         // GERANDO TABELA
         tabela = tabela + "\n=   100     ";
-        if(tempoSequencial >= 10) {
-            tabela = tabela + "=      " + tempoSequencial + "       ";
-        } else {
-            tabela = tabela + "=       " + tempoSequencial + "       ";
-        }
-        if(tempoBinario >= 10) {
-            tabela = tabela + "=      " + tempoBinario + "      =";
-        } else {
-            tabela = tabela + "=       " + tempoBinario + "      =";
-        }
+        tabela = gerarTabela(tabela, tempoBinario, tempoSequencial);
 
-        int[] vetor3;
-        vetor3 = new int[1000];
+        vetor = new int[1000];
 
-        for (int i = 0; i < vetor3.length; i++) {
-            vetor3[i] = sort.nextInt(2000);
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = sort.nextInt(2000);
         }
-
         chave = sort.nextInt(2000);
 
-        tempoInicialSequencial = System.currentTimeMillis();
-        buscaSequencial(vetor3, chave);
-        tempoSequencial = System.currentTimeMillis() - tempoInicialSequencial;
-
-        tempoInicialBinario = System.currentTimeMillis();
-        buscaBinaria(vetor3, chave);
-        tempoBinario = System.currentTimeMillis() - tempoInicialBinario;
+        tempoSequencial = testeTempoSeq(vetor, chave);
+        tempoBinario = testeTempoBin(vetor, chave);
 
         // GERANDO TABELA
         tabela = tabela + "\n=   1000    ";
-        if(tempoSequencial >= 10) {
-            tabela = tabela + "=      " + tempoSequencial + "       ";
-        } else {
-            tabela = tabela + "=       " + tempoSequencial + "       ";
-        }
-        if(tempoBinario >= 10) {
-            tabela = tabela + "=      " + tempoBinario + "      =";
-        } else {
-            tabela = tabela + "=       " + tempoBinario + "      =";
-        }
+        tabela = gerarTabela(tabela, tempoBinario, tempoSequencial);
 
-        int[] vetor4;
-        vetor4 = new int[10000];
+        vetor = new int[10000];
 
-        for (int i = 0; i < vetor4.length; i++) {
-            vetor4[i] = sort.nextInt(20000);
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = sort.nextInt(20000);
         }
-
         chave = sort.nextInt(20000);
 
-        tempoInicialSequencial = System.currentTimeMillis();
-        buscaSequencial(vetor4, chave);
-        tempoSequencial = System.currentTimeMillis() - tempoInicialSequencial;
-
-        tempoInicialBinario = System.currentTimeMillis();
-        buscaBinaria(vetor4, chave);
-        tempoBinario = System.currentTimeMillis() - tempoInicialBinario;
+        tempoSequencial = testeTempoSeq(vetor, chave);
+        tempoBinario = testeTempoBin(vetor, chave);
 
         // GERANDO TABELA
         tabela = tabela + "\n=   10000   ";
-        if(tempoSequencial >= 10) {
-            tabela = tabela + "=      " + tempoSequencial + "       ";
-        } else {
-            tabela = tabela + "=       " + tempoSequencial + "       ";
-        }
-        if(tempoBinario >= 10) {
-            tabela = tabela + "=      " + tempoBinario + "      =";
-        } else {
-            tabela = tabela + "=       " + tempoBinario + "      =";
-        }
+        tabela = gerarTabela(tabela, tempoBinario, tempoSequencial);
 
-        int[] vetor5;
-        vetor5 = new int[100000];
+        vetor = new int[100000];
 
-        for (int i = 0; i < vetor5.length; i++) {
-            vetor5[i] = sort.nextInt(200000);
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = sort.nextInt(200000);
         }
-
         chave = sort.nextInt(200000);
 
-        tempoInicialSequencial = System.currentTimeMillis();
-        buscaSequencial(vetor5, chave);
-        tempoSequencial = System.currentTimeMillis() - tempoInicialSequencial;
-
-        tempoInicialBinario = System.currentTimeMillis();
-        buscaBinaria(vetor5, chave);
-        tempoBinario = System.currentTimeMillis() - tempoInicialBinario;
+        tempoSequencial = testeTempoSeq(vetor, chave);
+        tempoBinario = testeTempoBin(vetor, chave);
 
         // GERANDO TABELA
         tabela = tabela + "\n=   100000  ";
-        if(tempoSequencial >= 10) {
-            tabela = tabela + "=      " + tempoSequencial + "       ";
-        } else {
-            tabela = tabela + "=       " + tempoSequencial + "       ";
-        }
-        if(tempoBinario >= 10) {
-            tabela = tabela + "=      " + tempoBinario + "      =";
-        } else {
-            tabela = tabela + "=       " + tempoBinario + "      =";
-        }
-
+        tabela = gerarTabela(tabela, tempoBinario, tempoSequencial);
         tabela = tabela + "\n============================================";
 
         limpaTerminal();
         System.out.println(tabela);
+    }
+
+    public static long testeTempoSeq(int[] vetor, int chave) {
+
+        long tempoInicial, tempo;
+
+        tempoInicial = System.currentTimeMillis();
+        buscaSequencial(vetor, chave);
+        tempo = System.currentTimeMillis() - tempoInicial;
+
+        return tempo;
+    }
+
+    public static long testeTempoBin(int[] vetor, int chave) {
+
+        long tempoInicial, tempo;
+
+        tempoInicial = System.currentTimeMillis();
+        buscaSequencial(vetor, chave);
+        tempo = System.currentTimeMillis() - tempoInicial;
+
+        return tempo;
     }
 
     public static void buscaSequencial(int[] vetor, int chave) {
@@ -203,6 +143,22 @@ public class Atividade {
                 break;
             }
         }
+    }
+
+    public static String gerarTabela(String tabela, long tempoBinario, long tempoSequencial) {
+
+        if(tempoSequencial >= 10) {
+            tabela = tabela + "=      " + tempoSequencial + "       ";
+        } else {
+            tabela = tabela + "=       " + tempoSequencial + "       ";
+        }
+        if(tempoBinario >= 10) {
+            tabela = tabela + "=      " + tempoBinario + "      =";
+        } else {
+            tabela = tabela + "=       " + tempoBinario + "      =";
+        }
+
+        return tabela;
     }
 
     public static void limpaTerminal() {
