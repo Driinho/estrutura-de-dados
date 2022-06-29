@@ -25,14 +25,14 @@ public class Atividade {
         vetorBubble = bubble(vetor);
         vetorInsertionSort = insertionSort(vetor);
 
-        System.out.println("\n\t[ Bubble Sort]\n");
+        System.out.println("\n\t\t[Bubble Sort]\n");
 
         
         for(int i = 0; i < vetorBubble.length; i++) {
             System.out.print("[" + vetorBubble[i] + "] ");
         }
 
-        System.out.println("\n\n\t[ Insertion Sort]\n");
+        System.out.println("\n\n\t\t[Insertion Sort]\n");
 
         for(int i = 0; i < vetorInsertionSort.length; i++) {
             System.out.print("[" + vetorInsertionSort[i] + "] ");
