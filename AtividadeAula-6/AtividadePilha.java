@@ -78,10 +78,10 @@ public class AtividadePilha {
 
     public static int buscarValor(int valor) {
 
-        int aux = 0;
-        for (int i = qtdeItens; i >= 0; i--, aux++) {
+        int aux = qtdeItens;
+        for (int i = 0; i < qtdeItens; i++) {
             if (pilha[i] == valor) {
-                return aux;
+                return i;
             }
         }
 
